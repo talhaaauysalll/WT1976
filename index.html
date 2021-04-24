@@ -9,12 +9,20 @@
   <body>
     <p id="paragraf"></p>
     <h1>Merhaba Dünya</h1>
+    
+    <textarea id="bilgi" cols="30" rows="10"></textarea>
     <script src="jquery-3.6.0.min.js"></script>
 
     <script>
       $("#paragraf").html("Merhaba Dünya");
       $("#paragraf").css("background-color","yellow");
-      
+      $.ajax({
+          url:"text.txt",
+          type:"get",
+          success:function(cevap){
+              $("#bilgi").val(cevap);
+          }
+      });
     </script>
   </body>
 </html>
